@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ master ]
   schedule:
-    - cron: 0 2,14 * * *
+    - cron: 0 2 * * *
 
 jobs:
   build:
@@ -26,4 +26,7 @@ jobs:
         
     - name: Checkin
       run: |
-        python C189Checkin.py --user '${{ secrets.USER }}' --pwd '${{ secrets.PWD }}'
+        python3 C189Checkin.py <<EOF
+        ${{ secrets.USER }}
+        ${{ secrets.PWD }}
+        EOF
