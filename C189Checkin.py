@@ -1,11 +1,9 @@
-#-*- coding: UTF-8 -*- 
-
 import requests, time, re, rsa, json, base64, argparse
 from urllib import parse
 
 s = requests.Session()
 
-parser = argparse.ArgumentParser(description='--user 账号,--pwd 密码')
+parser = argparse.ArgumentParser(description='--user username,--pwd password')
 parser.add_argument("--user", type=str, default = "")
 parser.add_argument("--pwd", type=str, default = "")
 args = parser.parse_args()
