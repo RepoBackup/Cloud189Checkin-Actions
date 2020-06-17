@@ -26,6 +26,6 @@ jobs:
         
     - name: Checkin
       run: |
-        user=${{ secrets.USER }}
-        pwd=${{ secrets.PWD }}
+        user='${{ secrets.USER }}'
+        pwd='${{ secrets.PWD }}'
         python C189Checkin.py --user $user --pwd $pwd
