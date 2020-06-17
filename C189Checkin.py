@@ -3,7 +3,7 @@ from urllib import parse
 
 s = requests.Session()
 
-parser = argparse.ArgumentParser(description='--user username,--pwd password')
+parser = argparse.ArgumentParser(description='--user 账号,--pwd 密码')
 parser.add_argument("--user", type=str, default = "")
 parser.add_argument("--pwd", type=str, default = "")
 args = parser.parse_args()
@@ -22,6 +22,7 @@ def main():
 		print("共有", len(user_list), "个账号，开始签到")
 		print("*" * 26)
 		for i in range(len(user_list)):
+			print(user_list[i], pwd_list[i])
 			login(user_list[i], pwd_list[i])
 			rand = str(round(time.time()*1000))
 			surl = f'https://api.cloud.189.cn/mkt/userSign.action?rand={rand}&clientType=TELEANDROID&version=8.6.3&model=SM-G930K'
@@ -141,4 +142,3 @@ def login(username, password):
 
 if __name__ == "__main__":
     main()
-
