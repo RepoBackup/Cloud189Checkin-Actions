@@ -26,7 +26,4 @@ jobs:
         
     - name: Checkin
       run: |
-        python3 C189Checkin.py <<EOF
-        ${{ secrets.USER }}
-        ${{ secrets.PWD }}
-        EOF
+        bash run.sh ${{ secrets.USER }} ${{ secrets.PWD }}
