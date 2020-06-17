@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import requests, time, re, rsa, json, base64, argparse
 from urllib import parse
 
